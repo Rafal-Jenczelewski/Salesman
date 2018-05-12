@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  height: 100%;
+}
+
+html {
+  height: 100%;
+}
+
+.App {
+  display: grid;
+  grid-template-rows: 20% auto;
+  grid-template-columns: auto;
+  grid-template-areas: "nav"
+  "content";
+  height: 100vw;
+  width: 100vw;
+}
+
+.nav-bar {
+  display: flex;
+  background: linear-gradient(green, darkgreen);
+  grid-area: nav;
+  justify-content: center;
+  flex: 1;
+  flex-direction: row;
+  align-items: center;
+}
+
+.nav-bar > .link {
+  margin: 5px;
+}
+
+.content {
+  display: flex;
+  grid-area: content;
+  justify-content: center;
+  flex: 1;
+  flex-direction: row;
+  align-items: center;
+}
