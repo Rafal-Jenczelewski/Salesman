@@ -11,12 +11,16 @@ html {
 
 .App {
   display: grid;
-  grid-template-rows: 20% auto;
+  grid-template-rows: 20% 80%;
   grid-template-columns: auto;
   grid-template-areas: "nav"
   "content";
-  height: 100vw;
-  width: 100vw;
+  height: 100vh;
+  width: 60%;
+  background: linear-gradient(green, darkgreen);
+  margin-left: auto;
+  margin-right: auto;
+  border: double darkblue;
 }
 
 .nav-bar {
@@ -38,6 +42,12 @@ html {
   grid-area: content;
   justify-content: center;
   flex: 1;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
+}
+
+.matrix-inputs {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }

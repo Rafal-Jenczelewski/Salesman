@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import NavBar from './components/NavBar'
-import {BrowserRouter, Route} from "react-router-dom"
-import './index.css';
+import {BrowserRouter, Route, Redirect} from "react-router-dom"
+import './styles/index.css';
+import NewProblemPage from './components/NewProblemPage'
 
 class App extends Component {
     render() {
@@ -9,9 +10,9 @@ class App extends Component {
             <BrowserRouter>
                 <div className="App">
                     <NavBar/>
-                    <Route exact path={"/"}/>
-                    <Route path={"/new"}/>
-                    <Route path={"/requests"}/>
+                    <Route path={"/new"} component={NewProblemPage}/>
+                    <Route path={"/problems"}/>
+                    <Redirect from={"/"} to={"/problems"}/>
                 </div>
             </BrowserRouter>
         );

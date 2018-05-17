@@ -7,13 +7,10 @@ import {Link} from 'react-router-dom'
 class NavBar extends Component {
 
     render() {
-        return (<StickyContainer>
-            <Sticky relative={false} topOffset={0}>{({style}) => (<header style={style} className={"nav-bar"}>
-                <Link className={"link"} to={"/"}>Home</Link>
-                <Link className={"link"} to={"/new"}>New request</Link>
-                <Link className={"link"} to={"/requests"}>Requests</Link>
-            </header>)}</Sticky>
-        </StickyContainer>)
+        return (<header className={"nav-bar"}>
+                <Link className={"link"} to={"/new"}>New problem</Link>
+                <Link className={"link"} to={"/problems"}>Problems</Link>
+            </header>)
     }
 }
 
