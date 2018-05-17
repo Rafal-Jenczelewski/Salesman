@@ -1,19 +1,23 @@
-.new-problem {
+.new-problem-inputs {
     display: grid;
-    grid-template-rows: 30% 50% 20%;
+    grid-template-rows: 30% 10% 40% 10%;
     grid-template-columns: 10% 80% 10%;
     grid-template-areas: ". desc ."
+    ". name ."
     ". inputs ."
     ". btn .";
 }
 
-.desc {
+.new-problem-desc {
     grid-area: desc;
     text-align: center;
 }
 
-.matrix-inputs {
+.new-problem-matrix-inputs {
     grid-area: inputs;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 #matrix-input {
@@ -29,26 +33,34 @@
     height: 20px;
 }
 
-.upload-button {
+.new-problem-upload-button {
     height: 20px;
     width: 80px;
     grid-area: btn;
 }
 
-.radio {
+.new-problem-radio {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
 }
 
-.new-problem.small {
-    grid-template-rows: 30% 20% 20% 30%;
+.new-problem-inputs.small {
+    grid-template-rows: 30% 10% 20% 20% 20%;
     grid-template-columns: 10% 80% 10%;
     grid-template-areas: ". desc ."
+    ". name ."
     ". inputs ."
     ". btn ."
     ". . .";
+}
+
+.new-problem-name {
+    grid-area: name;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 label {

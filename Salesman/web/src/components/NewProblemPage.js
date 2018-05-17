@@ -1,8 +1,12 @@
 import React, {Component} from 'react';
 import '../styles/newProblemPage.css';
+import {postInstance} from '../requests/requests'
+
+const classPrefix = "new-problem-";
 
 class NewProblemPage extends Component {
     state = {
+        name: '',
         matrixInput: '',
         citiesCount: '',
         type: 'file',
@@ -12,10 +16,18 @@ class NewProblemPage extends Component {
     constructor(props) {
         super(props);
 
+        this.nameChange = this.nameChange.bind(this);
         this.matrixChange = this.matrixChange.bind(this);
         this.countChange = this.countChange.bind(this);
         this.typeChange = this.typeChange.bind(this);
         this.fileChange = this.fileChange.bind(this);
+        this.submit = this.submit.bind(this);
+    }
+
+    nameChange(e) {
+        this.setState({
+            name: e.target.value
+        })
     }
 
     matrixChange(e) {
@@ -30,7 +42,7 @@ class NewProblemPage extends Component {
         }
 
         this.setState({
-            citiesCount: e.target.value
+            citiesCount: e.target.value - 0
         });
     }
 
@@ -47,10 +59,19 @@ class NewProblemPage extends Component {
         })
     }
 
+    submit() {
+        postInstance({
+            title: this.state.name,
+            graph: this.state.matrixInput,
+            cityCount: this.state.citiesCount,
+            owner_id: 1
+        })
+    }
+
     render() {
         let content = null;
         if (this.state.type === 'manual')
-            content = <div className={'matrix-inputs'}>
+            content = <div className={classPrefix + 'matrix-inputs'}>
                 <div>
                     <label htmlFor={'matrix-input'}>Matrix: </label>
                     <textarea id={'matrix-input'} value={this.state.matrixInput}
@@ -63,28 +84,31 @@ class NewProblemPage extends Component {
                 </div>
             </div>;
         else if (this.state.type === 'file')
-            content = <div className={'matrix-inputs'}>
+            content = <div className={classPrefix + 'matrix-inputs'}>
                 <label>Choose a file <input type={'file'} accept={".txt"} onChange={this.fileChange}/></label>
             </div>;
 
         let className = this.state.type === "file" ? " small" : "";
 
-        return <div className={'content new-problem' + className}>
-            <div className={'desc'}>
+        return <div className={"content " + classPrefix + 'inputs' + className}>
+            <div className={classPrefix + 'desc'}>
                 <p>
                     Here, you can add new problem to your account. You can use .txt file with matrix of costs, or input
                     the
                     matrix yourself.
                 </p>
-                <div className={'radio'}>
+                <div className={classPrefix + 'radio'}>
                     <label>File <input type={'radio'} name={'upload-type'} value={'file'} onChange={this.typeChange}
                                   checked={this.state.type === 'file'}/></label>
                     <label>Manual <input type={'radio'} name={'upload-type'} value={'manual'} onChange={this.typeChange}
                                   checked={this.state.type === 'manual'}/></label>
                 </div>
             </div>
+            <div className={classPrefix + 'name'}>
+                <label>Name <input type={"text"} onChange={this.nameChange} value={this.state.name}/></label>
+            </div>
             {content}
-            <button className={'upload-button'}>Upload</button>
+            <button className={classPrefix + 'upload-button'} onClick={this.submit}>Upload</button>
         </div>;
     }
 }

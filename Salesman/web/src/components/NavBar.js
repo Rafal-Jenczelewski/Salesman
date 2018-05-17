@@ -1,6 +1,4 @@
 import React, {Component} from 'react'
-import {Sticky, StickyContainer} from 'react-sticky'
-import {} from 'react-sticky'
 import {Link} from 'react-router-dom'
 
 
