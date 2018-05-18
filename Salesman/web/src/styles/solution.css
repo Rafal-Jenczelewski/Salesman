@@ -1,0 +1,28 @@
+.solution-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 5px;
+    background-color: aqua;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.solution-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.solution-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.solution-params {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

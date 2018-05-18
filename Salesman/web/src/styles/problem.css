@@ -1,5 +1,13 @@
+.problem-layout {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+}
+
 .problem-main {
     display: flex;
+    flex: 1;
     flex-direction: column;
     justify-content: space-around;
     width: 80%;
@@ -7,7 +15,6 @@
 
     border: double blue;
 
-    height: 30%;
 }
 
 .problem-header {

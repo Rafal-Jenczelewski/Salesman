@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import "../styles/problem.css"
 import {postTask} from '../requests/requests'
+import SolutionHistory from './SolutionHistory'
 
 const classPrefix = "problem-";
 
@@ -8,7 +9,8 @@ class Problem extends Component {
     state = {
         taskName: '',
         population: 100,
-        generations: 10
+        generations: 10,
+        expanded: false
     };
 
     constructor(props) {
@@ -58,7 +60,7 @@ class Problem extends Component {
             <div className={classPrefix + "content"}>
                 <textarea disabled={true}>{this.props.graph}</textarea>
                 <div className={classPrefix + 'buttons'}>
-                    <button>History</button>
+                    <button onClick={() => this.setState({expanded: true})}>History</button>
                     <button onClick={this.submitTask}>Task</button>
                 </div>
             </div>
@@ -75,6 +77,7 @@ class Problem extends Component {
                                                                                         onChange={this.populationChange}/>
                 </div>
             </div>
+            {this.state.expanded ? <SolutionHistory/> : null}
         </div>
     }
 }
