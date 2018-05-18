@@ -9,8 +9,9 @@ class ProblemsPage extends Component {
         instances: []
     };
 
-    componentDidMount() {
-        let instances = getInstances();
+    async componentDidMount() {
+        let instances = await getInstances();
+        console.log("insta:");
         console.log(instances);
         this.setState({
             instances: instances

@@ -15,7 +15,7 @@ export function postTask(task) {
 }
 
 export function getInstances() {
-    return fetch(api + "instances/")
+    return fetch(api + "instances")
         .then(res => res.json())
     //     // .then(json => json.)
     // return [
