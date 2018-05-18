@@ -15,37 +15,37 @@ export function postTask(task) {
 }
 
 export function getInstances() {
-    // return fetch(api + "instances/")
-    //     .then(res => res.json())
+    return fetch(api + "instances/")
+        .then(res => res.json())
     //     // .then(json => json.)
-    return [
-        {
-            id: 1,
-            name: "Test1",
-            graph: "12 12\n1 1",
-            cityCount: 2,
-            owner_id: 1
-        },
-        {
-            id: 2,
-            name: "Test2",
-            graph: "12 12\n1 1",
-            cityCount: 2,
-            owner_id: 1
-        },
-        {
-            id: 3,
-            name: "Test3",
-            graph: "12 12\n1 1",
-            cityCount: 2,
-            owner_id: 1
-        },
-        {
-            id: 4,
-            name: "Test4",
-            graph: "12 12\n1 1",
-            cityCount: 2,
-            owner_id: 1
-        }
-    ]
+    // return [
+    //     {
+    //         id: 1,
+    //         name: "Test1",
+    //         graph: "12 12\n1 1",
+    //         cityCount: 2,
+    //         owner_id: 1
+    //     },
+    //     {
+    //         id: 2,
+    //         name: "Test2",
+    //         graph: "12 12\n1 1",
+    //         cityCount: 2,
+    //         owner_id: 1
+    //     },
+    //     {
+    //         id: 3,
+    //         name: "Test3",
+    //         graph: "12 12\n1 1",
+    //         cityCount: 2,
+    //         owner_id: 1
+    //     },
+    //     {
+    //         id: 4,
+    //         name: "Test4",
+    //         graph: "12 12\n1 1",
+    //         cityCount: 2,
+    //         owner_id: 1
+    //     }
+    // ]
 }

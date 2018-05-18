@@ -11,6 +11,7 @@ class ProblemsPage extends Component {
 
     componentDidMount() {
         let instances = getInstances();
+        console.log(instances);
         this.setState({
             instances: instances
         });
