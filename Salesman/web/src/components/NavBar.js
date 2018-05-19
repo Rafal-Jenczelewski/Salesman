@@ -5,10 +5,29 @@ import {Link} from 'react-router-dom'
 class NavBar extends Component {
 
     render() {
-        return (<header className={"nav-bar"}>
-                <Link className={"link"} to={"/new"}>New problem</Link>
-                <Link className={"link"} to={"/problems"}>Problems</Link>
-            </header>)
+      return (
+
+        <nav className={"navbar navbar-expand-lg navbar-light bg-light margin50"} styleName={"margin-bottom: 50px;"}>
+          <Link className={"navbar-brand"} to={"/start"}>TSP Solver</Link>
+          <div className={"collapse navbar-collapse"}>
+            <ul className={"navbar-nav"}>
+              <li className={"nav-item"}>
+                <Link className={"nav-link"} to={"/problems"}>Problemy</Link>
+              </li>
+              <li className={"nav-item"}>
+                <Link className={"nav-link"} to={"/solutions"}>Zadania</Link>
+              </li>
+              <li className={"nav-item"}>
+                <Link className={"nav-link"} to={"/history"}>Historia</Link>
+              </li>
+              <li className={"nav-item"}>
+                <Link className={"nav-link"} to={"/server"}>Serwer</Link>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+      )
     }
 }
 

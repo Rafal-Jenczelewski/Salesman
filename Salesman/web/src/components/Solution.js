@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import '../styles/solution.css'
+
 
 const classPrefix = 'solution-';
 

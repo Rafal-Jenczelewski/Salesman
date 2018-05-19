@@ -4,6 +4,12 @@ import {BrowserRouter, Route, Redirect} from "react-router-dom"
 import './styles/index.css';
 import NewProblemPage from './components/NewProblemPage'
 import ProblemsPage from './components/ProblemsPage'
+import ServerPage from './components/ServerPage'
+import SolutionsPage from './components/SolutionsPage'
+import SolutionHistory from './components/SolutionHistory'
+import StartPage from './components/StartPage'
+import NewSolutionPage from './components/NewSolutionPage'
+
 
 class App extends Component {
     render() {
@@ -12,8 +18,13 @@ class App extends Component {
                 <div className="App">
                     <NavBar/>
                     <Route path={"/new"} component={NewProblemPage}/>
+                    <Route path={"/solutions"} component={SolutionsPage}/>
+                    <Route path={"/new_problem"} component={NewSolutionPage}/>
                     <Route path={"/problems"} component={ProblemsPage}/>
-                    <Redirect from={"/"} to={"/problems"}/>
+                    <Route path={"/server"} component={ServerPage}/>
+                    <Route path={"/history"} component={SolutionHistory}/>
+                    <Route path={"/start"} component={StartPage}/>
+                    <Redirect from={"/"} to={"/start"}/>
                 </div>
             </BrowserRouter>
         );

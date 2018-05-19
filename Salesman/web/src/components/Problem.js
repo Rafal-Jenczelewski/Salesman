@@ -1,7 +1,8 @@
 import React, {Component} from 'react'
-import "../styles/problem.css"
 import {postTask} from '../requests/requests'
 import SolutionHistory from './SolutionHistory'
+import {Link} from 'react-router-dom'
+
 
 const classPrefix = "problem-";
 
@@ -51,7 +52,7 @@ class Problem extends Component {
         })
     }
 
-    render() {
+  /*  render() {
         return <div className={classPrefix + "main"}>
             <div className={classPrefix + "header"}>
                 <span>{this.props.name}</span>
@@ -79,7 +80,29 @@ class Problem extends Component {
             </div>
             {this.state.expanded ? <SolutionHistory/> : null}
         </div>
+    }*/
+    render() {
+      return (
+
+        <div className="col-12 margin20">
+          <div className={"card"}>
+            <div className={"card-header"}>{this.props.name}</div>
+            <div className={"card-body"}>
+              <h5 className={"card-title"}>Liczba miast: {this.props.cityCount}</h5>
+              <pre>{this.props.graph}</pre>
+              <Link to={"/new"} className={"btn btn-primary"}>Uruchom zadanie</Link> &nbsp;
+              <Link to={"/new"} className={"btn btn-danger"}>Usuń problem</Link>
+            </div>
+          </div>
+        </div>
+
+      )
     }
+
+
+
+
+
 }
 
 export default Problem;
