@@ -1,22 +1,21 @@
 import React, {Component} from 'react'
-import {getSoultions} from '../requests/requests'
+import {fetchHistory} from '../requests/requests'
 import Solution from './Solution'
 
 class SolutionHistory extends Component {
+    state = {
+        solutions: []
+    };
 
-  state = {
-      solutions: []
-  };
-
-  async componentDidMount() {
-      fetch("http://127.0.0.1:8000/tsp/history")
-        .then(response => response.json())
-        .then(data => this.setState({ solutions: data }));
-  }
+    async componentDidMount() {
+        let solutions = await fetchHistory();
+        this.setState({
+            solutions: solutions
+        })
+    }
 
     render() {
-
-      console.log(this.state.solutions);
+        console.log(this.state.solutions);
         let solutions = this.state.solutions.map(e => <Solution
             key={e.id}
             id={e.id}
@@ -31,32 +30,31 @@ class SolutionHistory extends Component {
             wpz={e.wpz}
         />);
 
-      return (
+        return (
+            <div className={"container-fluid"}>
+                <h2>Historia rozwiązań</h2>
+                <hr/>
+                <table className={"table"}>
+                    <thead className={"thead-light"}>
+                    <tr>
+                        <th scope={"col"}>ID</th>
+                        <th scope={"col"}>Nazwa problemu</th>
+                        <th scope={"col"}>Ilość miast</th>
+                        <th scope={"col"}>Macierz rozwiązań</th>
+                        <th scope={"col"}>Czas wykonywania algorytmu</th>
+                        <th scope={"col"}>Wielosć populacji</th>
+                        <th scope={"col"}>Ilość generacji</th>
+                        <th scope={"col"}>Wielośc pojedynczego zadania</th>
+                        <th scope={"col"}>Ilość procesów</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {solutions}
+                    </tbody>
+                </table>
+            </div>
 
-        <div className={"container-fluid"}>
-          <h2>Historia rozwiązań</h2>
-          <hr />
-          <table className={"table"}>
-            <thead className={"thead-light"}>
-              <tr>
-                <th scope={"col"}>ID</th>
-                <th scope={"col"}>Nazwa problemu</th>
-                <th scope={"col"}>Ilość miast</th>
-                <th scope={"col"}>Macierz rozwiązań</th>
-                <th scope={"col"}>Czas wykonywania algorytmu</th>
-                <th scope={"col"}>Wielosć populacji</th>
-                <th scope={"col"}>Ilość generacji</th>
-                <th scope={"col"}>Wielośc pojedynczego zadania</th>
-                <th scope={"col"}>Ilość procesów</th>
-              </tr>
-            </thead>
-            <tbody>
-              {solutions}
-            </tbody>
-          </table>
-        </div>
-
-      )
+        )
     }
 }
 

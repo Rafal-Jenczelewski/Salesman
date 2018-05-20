@@ -4,8 +4,6 @@ import {Link} from 'react-router-dom'
 class StartPage extends Component {
 
     render() {
-
-
         return (
           <div className={"container"}>
             <div className={"row"}>
@@ -17,7 +15,7 @@ class StartPage extends Component {
                 <div className={"card"}>
                   <div className={"card-body"}>
                     <center>
-                      <i className={"fas fa-forward"}></i><br />
+                      <i className={"fas fa-forward"}/><br />
                       Ilość twoich problemów: <b>4</b>
                     </center>
                   </div>
@@ -27,7 +25,7 @@ class StartPage extends Component {
                 <div className={"card"}>
                   <div className={"card-body"}>
                   <center>
-                    <i className={"fas fa-cogs"}></i><br />
+                    <i className={"fas fa-cogs"}/><br />
                     Ilość twoich problemów: <b>4</b>
                   </center>
                   </div>
@@ -37,7 +35,7 @@ class StartPage extends Component {
                 <div className={"card"}>
                   <div className={"card-body"}>
                   <center>
-                    <i className={"fas fa-code"}></i><br />
+                    <i className={"fas fa-code"}/><br />
                     Ilość twoich problemów: <b>4</b>
                   </center>
                   </div>
@@ -47,7 +45,7 @@ class StartPage extends Component {
                 <div className={"card"}>
                   <div className={"card-body"}>
                   <center>
-                    <i className={"fas fa-coins"}></i><br />
+                    <i className={"fas fa-coins"}/><br />
                     Ilość twoich problemów: <b>4</b>
                   </center>
                   </div>
@@ -57,7 +55,7 @@ class StartPage extends Component {
                 <div className={"card"}>
                   <div className={"card-body"}>
                   <center>
-                    <i className={"fas fa-cubes"}></i><br />
+                    <i className={"fas fa-cubes"}/><br />
                     Ilość twoich problemów: <b>4</b>
                   </center>
                   </div>

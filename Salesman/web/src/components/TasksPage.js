@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
 import Task from './Task'
+import {fetchTasks} from '../requests/requests'
 class TasksPage extends Component {
 
   state = {
@@ -8,9 +9,10 @@ class TasksPage extends Component {
   };
 
   async componentDidMount() {
-      fetch("http://127.0.0.1:8000/tsp/tasks")
-        .then(response => response.json())
-        .then(data => this.setState({ tasks: data }));
+      let tasks = await fetchTasks();
+      this.setState({
+          tasks: tasks
+      })
   }
 
   render() {

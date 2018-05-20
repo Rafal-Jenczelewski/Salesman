@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import Problem from './Problem'
 import {Link} from 'react-router-dom'
-
+import {fetchInstances} from '../requests/requests'
 
 class ProblemsPage extends Component {
     state = {
@@ -9,9 +9,10 @@ class ProblemsPage extends Component {
     };
 
     async componentDidMount() {
-        fetch("http://127.0.0.1:8000/tsp/instances")
-          .then(response => response.json())
-          .then(data => this.setState({ instances: data }));
+        let instances = await fetchInstances();
+        this.setState({
+            instances: instances
+        })
     }
 
     render() {

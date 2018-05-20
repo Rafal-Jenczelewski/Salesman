@@ -1,15 +1,11 @@
 import React, {Component} from 'react';
 import {postInstance} from '../requests/requests'
 
-
-const classPrefix = "new-problem-";
-
 class NewProblemPage extends Component {
     state = {
         name: '',
         matrixInput: '',
         citiesCount: '',
-        type: 'file',
         file: undefined
     };
 
@@ -19,7 +15,6 @@ class NewProblemPage extends Component {
         this.nameChange = this.nameChange.bind(this);
         this.matrixChange = this.matrixChange.bind(this);
         this.countChange = this.countChange.bind(this);
-        this.typeChange = this.typeChange.bind(this);
         this.fileChange = this.fileChange.bind(this);
         this.submit = this.submit.bind(this);
     }
@@ -43,13 +38,6 @@ class NewProblemPage extends Component {
 
         this.setState({
             citiesCount: e.target.value - 0
-        });
-    }
-
-    typeChange(e) {
-        this.setState({
-            type: e.target.value,
-            file: undefined
         });
     }
 
@@ -88,7 +76,7 @@ class NewProblemPage extends Component {
             </div>
             <div className={"col-6 margin20"}>
               <h5>Wpisz macierz miast swojego problemu</h5>
-              <textarea className={"form-control"} rows={"10"}></textarea>
+              <textarea className={"form-control"} rows={"10"}/>
             </div>
             <div className={"col-6 margin20"}>
               <h5>Dodaj plik z macierzą miast problemu</h5>

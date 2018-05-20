@@ -14,9 +14,17 @@ export function postTask(task) {
     })
 }
 
-export function getSoultions() {
-  fetch(api + "tasks")
-  .then(function(result) {
-      return result;
-  })
+export function fetchInstances() {
+    return fetch(api + 'instances')
+        .then(res => res.json())
+}
+
+export function fetchHistory() {
+    return fetch(api + 'history')
+        .then(res => res.json())
+}
+
+export function fetchTasks() {
+    return fetch(api + "tasks")
+        .then(res => res.json())
 }
