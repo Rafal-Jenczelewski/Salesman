@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
 import Task from './Task'
 import {fetchTasks} from '../requests/requests'
+
 class TasksPage extends Component {
 
   state = {

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {postInstance} from '../requests/requests'
+import {postTask} from '../requests/requests'
 
 class NewSolutionPage extends Component {
     state = {
@@ -12,10 +12,17 @@ class NewSolutionPage extends Component {
     constructor(props) {
         super(props);
 
+        this.nameChange = this.nameChange.bind(this);
         this.populationHandler = this.populationHandler.bind(this);
         this.generationsHandler = this.generationsHandler.bind(this);
         this.singleTaskSizeHandler = this.singleTaskSizeHandler.bind(this);
         this.processCountHandler = this.processCountHandler.bind(this);
+    }
+
+    nameChange(e) {
+        this.setState({
+            name: e.target.value
+        });
     }
 
     populationHandler(e) {
@@ -55,7 +62,9 @@ class NewSolutionPage extends Component {
     }
 
     submit() {
-        //TODO
+        postTask({
+            title: this.state.name
+        })
     }
 
     render() {
@@ -67,8 +76,8 @@ class NewSolutionPage extends Component {
           <div className={"row"}>
             <div className={"col-5 margin20"}>
               <div className={"form-group"}>
-                <label>ID problemu</label>
-                <input type={"text"} className={"form-control"} />
+                <label>Nazwa zadania</label>
+                <input type={"text"} className={"form-control"} value={this.state.name} onChange={this.nameChange}/>
               </div>
               <div className={"form-group"}>
                 <label>Wielosć populacji</label>
@@ -86,7 +95,7 @@ class NewSolutionPage extends Component {
                 <label>Ilość procesów</label>
                 <input type={"text"} value={this.state.processCount} onChange={this.processCountHandler} className={"form-control"} />
               </div>
-              <button className={"btn btn-info"} onClick={this.submit} >Dodaj</button>
+              <button className={"btn btn-info"} onClick={this.submit}>Dodaj</button>
             </div>
           </div>
         </div>
