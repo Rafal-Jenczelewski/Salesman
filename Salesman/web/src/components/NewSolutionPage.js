@@ -63,7 +63,12 @@ class NewSolutionPage extends Component {
 
     submit() {
         postTask({
-            title: this.state.name
+            title: this.state.name,
+            instance_id: this.props.instance_id,
+            status: "0",
+            population: this.state.population,
+            generations: this.state.generations,
+            owner_id: 1
         })
     }
 

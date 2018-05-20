@@ -1,7 +1,5 @@
 import React, {Component} from 'react'
-import {postInstance} from '../requests/requests'
 import {Link} from 'react-router-dom'
-
 
 class Problem extends Component {
     constructor(props) {
