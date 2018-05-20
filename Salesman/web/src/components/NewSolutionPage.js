@@ -17,6 +17,7 @@ class NewSolutionPage extends Component {
         this.generationsHandler = this.generationsHandler.bind(this);
         this.singleTaskSizeHandler = this.singleTaskSizeHandler.bind(this);
         this.processCountHandler = this.processCountHandler.bind(this);
+        this.submit = this.submit.bind(this);
     }
 
     nameChange(e) {
@@ -62,9 +63,10 @@ class NewSolutionPage extends Component {
     }
 
     submit() {
+        console.log(this.props.location.state);
         postTask({
             title: this.state.name,
-            instance_id: this.props.instance_id,
+            instance_id: this.props.location.state,
             status: "0",
             population: this.state.population,
             generations: this.state.generations,
