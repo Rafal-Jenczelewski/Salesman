@@ -4,20 +4,31 @@ import React, {Component} from 'react'
 const classPrefix = 'solution-';
 
 class Solution extends Component {
-    render(){
-        return <div className={classPrefix + 'main'}>
-            <div className={classPrefix + 'header'}>
-                <span>Time: {this.props.time}</span>
-                <span>Cost: {this.props.cost}</span>
-            </div>
-            <div className={classPrefix + 'content'}>
-                <span>Result: {this.props.result}</span>
-                <div className={classPrefix + 'params'}>
-                    <span>Generations: {this.props.generations}</span>
-                    <span>Population: {this.props.population}</span>
-                </div>
-            </div>
-        </div>
+  state = {
+  };
+
+  constructor(props) {
+      super(props);
+  }
+
+
+
+  render(){
+        return (
+
+          <tr>
+            <th>{this.props.id}</th>
+            <th>{this.props.title}</th>
+            <th>{this.props.cityCount}</th>
+            <th>{this.props.graph}</th>
+            <th>{this.props.time}</th>
+            <th>{this.props.population}</th>
+            <th>{this.props.generations}</th>
+            <th>{this.props.wpz}</th>
+            <th>{this.props.proc}</th>
+          </tr>
+
+        )
     }
 }
 

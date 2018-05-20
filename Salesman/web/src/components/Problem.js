@@ -1,10 +1,7 @@
 import React, {Component} from 'react'
-import {postTask} from '../requests/requests'
-import SolutionHistory from './SolutionHistory'
+import {postInstance} from '../requests/requests'
 import {Link} from 'react-router-dom'
 
-
-const classPrefix = "problem-";
 
 class Problem extends Component {
     state = {
@@ -42,7 +39,7 @@ class Problem extends Component {
     }
 
     submitTask() {
-        postTask({
+        postInstance({
             title: this.state.taskName,
             status: "0",
             owner_id: 1,
@@ -52,35 +49,6 @@ class Problem extends Component {
         })
     }
 
-  /*  render() {
-        return <div className={classPrefix + "main"}>
-            <div className={classPrefix + "header"}>
-                <span>{this.props.name}</span>
-                <span>Count: {this.props.cityCount}</span>
-            </div>
-            <div className={classPrefix + "content"}>
-                <textarea disabled={true}>{this.props.graph}</textarea>
-                <div className={classPrefix + 'buttons'}>
-                    <button onClick={() => this.setState({expanded: true})}>History</button>
-                    <button onClick={this.submitTask}>Task</button>
-                </div>
-            </div>
-            <div className={classPrefix + "task"}>
-                <div className={classPrefix + "input"}><label>Name </label><input type={'text'}
-                                                                                  value={this.state.taskName}
-                                                                                  onChange={this.nameChange}/></div>
-                <div className={classPrefix + "input"}><label>Generations </label><input type={'text'}
-                                                                                         value={this.state.generations}
-                                                                                         onChange={this.generationsChange}/>
-                </div>
-                <div className={classPrefix + "input"}><label>Population </label><input type={'text'}
-                                                                                        value={this.state.population}
-                                                                                        onChange={this.populationChange}/>
-                </div>
-            </div>
-            {this.state.expanded ? <SolutionHistory/> : null}
-        </div>
-    }*/
     render() {
       return (
 
@@ -98,10 +66,6 @@ class Problem extends Component {
 
       )
     }
-
-
-
-
 
 }
 

@@ -1,9 +1,7 @@
 import React, {Component} from 'react'
 import Problem from './Problem'
-import {getInstances} from '../requests/requests'
 import {Link} from 'react-router-dom'
 
-const classPrefix = "problems-"
 
 class ProblemsPage extends Component {
     state = {
@@ -11,27 +9,21 @@ class ProblemsPage extends Component {
     };
 
     async componentDidMount() {
-        let instances = await getInstances();
-        console.log("insta:");
-        console.log(instances);
-        this.setState({
-            instances: instances
-        });
+        fetch("http://127.0.0.1:8000/tsp/instances")
+          .then(response => response.json())
+          .then(data => this.setState({ instances: data }));
     }
 
     render() {
+        console.log(this.state.instances);
         let instances = this.state.instances.map(e => <Problem
             key={e.id}
             id={e.id}
-            name={e.name}
+            name={e.title}
             graph={e.graph}
             cityCount={e.cityCount}
             owner_id={e.owner_id}
         />);
-
-        /*return <div className={classPrefix + "instances content"}>
-            {instances}
-        </div>*/
 
         return (
           <div className={"container"}>
@@ -51,8 +43,6 @@ class ProblemsPage extends Component {
             </div>
           </div>
         )
-
-
     }
 }
 

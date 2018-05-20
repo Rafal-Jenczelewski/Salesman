@@ -7,7 +7,7 @@ class NavBar extends Component {
     render() {
       return (
 
-        <nav className={"navbar navbar-expand-lg navbar-light bg-light margin50"} styleName={"margin-bottom: 50px;"}>
+        <nav className={"navbar navbar-expand-lg navbar-light bg-light margin50"}>
           <Link className={"navbar-brand"} to={"/start"}>TSP Solver</Link>
           <div className={"collapse navbar-collapse"}>
             <ul className={"navbar-nav"}>
@@ -15,7 +15,7 @@ class NavBar extends Component {
                 <Link className={"nav-link"} to={"/problems"}>Problemy</Link>
               </li>
               <li className={"nav-item"}>
-                <Link className={"nav-link"} to={"/solutions"}>Zadania</Link>
+                <Link className={"nav-link"} to={"/tasks"}>Zadania</Link>
               </li>
               <li className={"nav-item"}>
                 <Link className={"nav-link"} to={"/history"}>Historia</Link>

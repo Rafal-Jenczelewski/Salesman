@@ -68,50 +68,6 @@ class NewProblemPage extends Component {
         })
     }
 
-  /*  render() {
-        let content = null;
-        if (this.state.type === 'manual')
-            content = <div className={classPrefix + 'matrix-inputs'}>
-                <div>
-                    <label htmlFor={'matrix-input'}>Matrix: </label>
-                    <textarea id={'matrix-input'} value={this.state.matrixInput}
-                              onChange={this.matrixChange}/>
-                </div>
-                <div>
-                    <label htmlFor={'count-input'}>Count: </label>
-                    <input id={'count-input'} type={'text'} value={this.state.citiesCount}
-                           onChange={this.countChange}/>
-                </div>
-            </div>;
-        else if (this.state.type === 'file')
-            content = <div className={classPrefix + 'matrix-inputs'}>
-                <label>Choose a file <input type={'file'} accept={".txt"} onChange={this.fileChange}/></label>
-            </div>;
-
-        let className = this.state.type === "file" ? " small" : "";
-
-        return <div className={"content " + classPrefix + 'inputs' + className}>
-            <div className={classPrefix + 'desc'}>
-                <p>
-                    Here, you can add new problem to your account. You can use .txt file with matrix of costs, or input
-                    the
-                    matrix yourself.
-                </p>
-                <div className={classPrefix + 'radio'}>
-                    <label>File <input type={'radio'} name={'upload-type'} value={'file'} onChange={this.typeChange}
-                                  checked={this.state.type === 'file'}/></label>
-                    <label>Manual <input type={'radio'} name={'upload-type'} value={'manual'} onChange={this.typeChange}
-                                  checked={this.state.type === 'manual'}/></label>
-                </div>
-            </div>
-            <div className={classPrefix + 'name'}>
-                <label>Name <input type={"text"} onChange={this.nameChange} value={this.state.name}/></label>
-            </div>
-            {content}
-            <button className={classPrefix + 'upload-button'} onClick={this.submit}>Upload</button>
-        </div>;
-    }*/
-
     render() {
       return (
 

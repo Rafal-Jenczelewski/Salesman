@@ -2,21 +2,35 @@ import React, {Component} from 'react'
 import {getSoultions} from '../requests/requests'
 import Solution from './Solution'
 
-const classPrefix = "solution-history-";
-
 class SolutionHistory extends Component {
-    state = {
-        solutions: []
-    };
 
-    async componentDidMount() {
-        let solutions = await getSoultions();
-        this.setState({
-            solutions: solutions.solutions
-        })
-    }
+  state = {
+      solutions: []
+  };
+
+  async componentDidMount() {
+      fetch("http://127.0.0.1:8000/tsp/history")
+        .then(response => response.json())
+        .then(data => this.setState({ solutions: data }));
+  }
 
     render() {
+
+      console.log(this.state.solutions);
+        let solutions = this.state.solutions.map(e => <Solution
+            key={e.id}
+            id={e.id}
+            graph={e.graph}
+            cityCount={e.cityCount}
+            title={e.title}
+            time={e.time}
+            owner_id={e.owner_id}
+            population={e.population}
+            generations={e.generations}
+            proc={e.proc}
+            wpz={e.wpz}
+        />);
+
       return (
 
         <div className={"container-fluid"}>
@@ -37,17 +51,7 @@ class SolutionHistory extends Component {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th>0</th>
-                <th>Testowy problem</th>
-                <th>12</th>
-                <th>1 2 3 6 5 4 7 8 9 12 11 10</th>
-                <th>5.23s</th>
-                <th>200</th>
-                <th>10000</th>
-                <th>5</th>
-                <th>9</th>
-              </tr>
+              {solutions}
             </tbody>
           </table>
         </div>

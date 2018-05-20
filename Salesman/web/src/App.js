@@ -5,7 +5,7 @@ import './styles/index.css';
 import NewProblemPage from './components/NewProblemPage'
 import ProblemsPage from './components/ProblemsPage'
 import ServerPage from './components/ServerPage'
-import SolutionsPage from './components/SolutionsPage'
+import TasksPage from './components/TasksPage'
 import SolutionHistory from './components/SolutionHistory'
 import StartPage from './components/StartPage'
 import NewSolutionPage from './components/NewSolutionPage'
@@ -18,7 +18,7 @@ class App extends Component {
                 <div className="App">
                     <NavBar/>
                     <Route path={"/new"} component={NewProblemPage}/>
-                    <Route path={"/solutions"} component={SolutionsPage}/>
+                    <Route path={"/tasks"} component={TasksPage}/>
                     <Route path={"/new_problem"} component={NewSolutionPage}/>
                     <Route path={"/problems"} component={ProblemsPage}/>
                     <Route path={"/server"} component={ServerPage}/>
