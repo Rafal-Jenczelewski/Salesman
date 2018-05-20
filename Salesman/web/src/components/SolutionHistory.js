@@ -44,7 +44,7 @@ class SolutionHistory extends Component {
                         <th scope={"col"}>Czas wykonywania algorytmu</th>
                         <th scope={"col"}>Wielosć populacji</th>
                         <th scope={"col"}>Ilość generacji</th>
-                        <th scope={"col"}>Wielośc pojedynczego zadania</th>
+                        <th scope={"col"}>Wielość pojedynczego zadania</th>
                         <th scope={"col"}>Ilość procesów</th>
                     </tr>
                     </thead>

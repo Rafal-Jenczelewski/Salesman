@@ -1,12 +1,6 @@
 import React, {Component} from 'react'
-import {postTask} from '../requests/requests'
-import {Link} from 'react-router-dom'
-
 
 class Task extends Component {
-    state = {
-    };
-
     constructor(props) {
         super(props);
     }
