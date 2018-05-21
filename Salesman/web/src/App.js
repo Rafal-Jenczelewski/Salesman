@@ -8,7 +8,7 @@ import ServerPage from './components/ServerPage'
 import CurrentTasksPage from './components/CurrentTasksPage'
 import SolutionHistory from './components/SolutionHistory'
 import StartPage from './components/StartPage'
-import NewSolutionPage from './components/NewSolutionPage'
+import NewTaskPage from './components/NewTaskPage'
 
 
 class App extends Component {
@@ -19,7 +19,7 @@ class App extends Component {
                     <NavBar/>
                     <Route path={"/new"} component={NewProblemPage}/>
                     <Route path={"/tasks"} component={CurrentTasksPage}/>
-                    <Route path={"/new_problem"} component={NewSolutionPage}/>
+                    <Route path={"/new_problem"} component={NewTaskPage}/>
                     <Route path={"/problems"} component={ProblemsPage}/>
                     <Route path={"/server"} component={ServerPage}/>
                     <Route path={"/history"} component={SolutionHistory}/>

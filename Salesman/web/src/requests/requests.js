@@ -28,3 +28,14 @@ export function fetchTasks() {
     return fetch(api + "tasks")
         .then(res => res.json())
 }
+
+//TODO: API, content-type
+export function postFile(data) {
+    return fetch(api + "ex", {
+        method: "post",
+        headers: {
+            "Content-type": "ex"
+        },
+        body: data
+    })
+}
