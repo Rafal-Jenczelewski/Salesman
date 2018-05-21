@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import Problem from './Problem'
+import ProblemEntry from './ProblemEntry'
 import {Link} from 'react-router-dom'
 import {fetchInstances} from '../requests/requests'
 
@@ -17,7 +17,7 @@ class ProblemsPage extends Component {
 
     render() {
         console.log(this.state.instances);
-        let instances = this.state.instances.map(e => <Problem
+        let instances = this.state.instances.map(e => <ProblemEntry
             key={e.id}
             id={e.id}
             name={e.title}

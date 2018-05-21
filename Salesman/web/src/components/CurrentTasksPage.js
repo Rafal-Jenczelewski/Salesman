@@ -1,9 +1,9 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
-import Task from './Task'
+import CurrentTaskEntry from './CurrentTaskEntry'
 import {fetchTasks} from '../requests/requests'
 
-class TasksPage extends Component {
+class CurrentTasksPage extends Component {
 
     state = {
         tasks: []
@@ -27,7 +27,7 @@ class TasksPage extends Component {
 
     render() {
         console.log(this.state.tasks);
-        let tasks = this.state.tasks.map(e => <Task
+        let tasks = this.state.tasks.map(e => <CurrentTaskEntry
             key={e.id}
             id={e.id}
             title={e.title}
@@ -63,4 +63,4 @@ class TasksPage extends Component {
     }
 }
 
-export default TasksPage;
+export default CurrentTasksPage;

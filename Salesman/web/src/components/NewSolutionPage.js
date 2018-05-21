@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {postTask} from '../requests/requests'
 
 class NewSolutionPage extends Component {
+    //TODO defaults?
     state = {
         population: 100,
         generations: 50,
@@ -64,6 +65,7 @@ class NewSolutionPage extends Component {
 
     submit() {
         console.log(this.props.location.state);
+        //TODO: all?
         postTask({
             title: this.state.name,
             instance_id: this.props.location.state,

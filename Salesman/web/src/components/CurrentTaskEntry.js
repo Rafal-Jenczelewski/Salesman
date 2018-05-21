@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 
-class Task extends Component {
+class CurrentTaskEntry extends Component {
     constructor(props) {
         super(props);
     }
@@ -43,4 +43,4 @@ class Task extends Component {
     }
 }
 
-export default Task;
+export default CurrentTaskEntry;

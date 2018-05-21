@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {fetchHistory} from '../requests/requests'
-import Solution from './Solution'
+import SolutionEntry from './SolutionEntry'
 
 class SolutionHistory extends Component {
     state = {
@@ -16,7 +16,7 @@ class SolutionHistory extends Component {
 
     render() {
         console.log(this.state.solutions);
-        let solutions = this.state.solutions.map(e => <Solution
+        let solutions = this.state.solutions.map(e => <SolutionEntry
             key={e.id}
             id={e.id}
             graph={e.graph}

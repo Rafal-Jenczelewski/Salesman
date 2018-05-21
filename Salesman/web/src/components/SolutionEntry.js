@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 
 
-class Solution extends Component {
+class SolutionEntry extends Component {
     state = {};
 
     constructor(props) {
@@ -27,4 +27,4 @@ class Solution extends Component {
     }
 }
 
-export default Solution;
+export default SolutionEntry;

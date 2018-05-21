@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
 
-class Problem extends Component {
+class ProblemEntry extends Component {
     constructor(props) {
         super(props);
     }
@@ -18,6 +18,7 @@ class Problem extends Component {
                         <Link to={{pathname: "/new", state: {instance_id: this.props.id}}}
                               className={"btn btn-primary"}>Uruchom
                             zadanie</Link> &nbsp;
+                        //TODO: link?
                         <Link to={"/new"} className={"btn btn-danger"}>Usuń problem</Link>
                     </div>
                 </div>
@@ -28,4 +29,4 @@ class Problem extends Component {
 
 }
 
-export default Problem;
+export default ProblemEntry;
